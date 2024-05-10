@@ -5,9 +5,13 @@ aggiungere event listener a tutti gli operatori:
 
 
 
- quando si clicca su un operatore, salvare l'operatore cliccato e il primo operando, quindi resettare il numero in alto
+quando si clicca su un operatore, salvare l'operatore cliccato e il primo operando, quindi resettare il numero in alto
 MILESTONE 3
-aggiungere event listener al pulsante "=": quando si clicca su =, salvare il secondo operando, effetuare il calcolo corretto in base all'operatore selezionato e visualizzare il risultato in alto
+
+aggiungere event listener al pulsante "=":
+
+
+quando si clicca su =, salvare il secondo operando, effetuare il calcolo corretto in base all'operatore selezionato e visualizzare il risultato in alto
 MILESTONE 4
 pulsante canc: cliccando il pulsante si resetta il calcolo
 :stella2: BONUS

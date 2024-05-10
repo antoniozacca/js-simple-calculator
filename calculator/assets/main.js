@@ -1,5 +1,8 @@
 const operatori = document.querySelectorAll(".operatori");
-const uguale = document.getElementById("operatore-uguale");
+
+let n1 = 0;
+let n2 = 0;
+let operatore = ''
 
 
 //stampo i numeri in result
@@ -13,32 +16,58 @@ for (let i = 0; i < numbers.length; i++) {
     
 }
 
+// loop per gli operatori
+for (let i = 0; i < operatori.length; i++) {
+    const operazione = operatori[i];
+    operazione.addEventListener('click', function () {
+        // result.innerText += pulsanti.innerHTML;
+
+    n1 = parseInt(result.innerHTML);
+    operatore = operazione.innerHTML;
+    result.innerHTML= ' ';
+    })
+    
+}
+
 // tasto cancella
 const cancella = document.getElementById("operatore-canc");
   cancella.addEventListener('click', function(){
     result.innerHTML= ' ';
   })
 
-  //operatore +
-  const somma = document.getElementById("operatore-addizione");
-  somma.addEventListener('click', function (num1, num2) {
+
+  //operatore =
+  const uguale = document.getElementById("operatore-uguale");
+  const moltiplicazioneSymbol= String.fromCharCode(215);
+  const divisioneSymbol= String.fromCharCode(247);
+  uguale.addEventListener('click', function(){
     
-  })
+    n2= parseInt(result.innerHTML);
 
-  //operatore -
-  const sottrazione = document.getElementById("operatore-sottrazione");
-  sottrazione.addEventListener('click', function (){
 
-  })
+    switch(operatore){
+        case '+':
+           
+            let somma= n1 + n2;
+            result.innerHTML= somma;
+        break; 
 
-  //operatore *
-  const moltiplicazione = document.getElementById("operatore-moltiplicazione");
-  moltiplicazione.addEventListener('click', function(){
+        case '-':
+            let sottrazione= n1 - n2;
+            result.innerHTML= sottrazione;
+        break;
 
-  })
-  
-  //operatore /
-  const divisione = document.getElementById("operatore-divisione");
-  divisione.addEventListener('click', function(){
-    
+        case moltiplicazioneSymbol:
+            let moltiplicazione= n1 * n2;
+            result.innerHTML= moltiplicazione;
+        break;
+
+        case divisioneSymbol:
+            let divisione= n1 / n2;
+            if (n2 === 0) {
+                alert("Non si può dividere per 0");
+            }
+            result.innerHTML= divisione;
+
+    }
   })
